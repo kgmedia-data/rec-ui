@@ -15,12 +15,14 @@
       </d-col>
     </d-row>
 
+    <!--
     <d-row>
-      <!-- Users Overview -->
+      Users Overview 
       <d-col lg="12" md="12" sm="12" class="mb-4">
         <bo-users-overview />
       </d-col>
     </d-row>
+    -->
 
     <d-row>
       <d-col lg="7" md="12" sm="12" class="mb-4">
@@ -30,6 +32,9 @@
           </d-tab>
           <d-tab title="Latest Items">
             <bo-top-items :api="'/api/dashboard/latest/'" />
+          </d-tab>
+          <d-tab title="Native Ads">
+            <bo-top-items :api="'/api/dashboard/ads/'" />
           </d-tab>
         </d-tabs>
       </d-col>
@@ -69,19 +74,21 @@ export default {
          label: 'Items',
          value: '--',
          tip: '',
-       }, {
-         label: 'Total Positive',
-         value: '--',
-         tip: '',
-       }, {
-         label: 'Valid Positive',
-         value: '--',
-         tip: 'A positive feedback is valid only if this user has both positive feedback and negative feedback',
-       }, {
-         label: 'Valid Negative',
-         value: '--',
-         tip: 'A negative feedback is valid only if this user has both positive feedback and negative feedback',
-       }],
+       }
+      //  , {
+      //    label: 'Total Positive',
+      //    value: '--',
+      //    tip: '',
+      //  }, {
+      //    label: 'Valid Positive',
+      //    value: '--',
+      //    tip: 'A positive feedback is valid only if this user has both positive feedback and negative feedback',
+      //  }, {
+      //    label: 'Valid Negative',
+      //    value: '--',
+      //    tip: 'A negative feedback is valid only if this user has both positive feedback and negative feedback',
+      //  }
+       ],
       popularItems: [],
       latestItems: [],
     };
