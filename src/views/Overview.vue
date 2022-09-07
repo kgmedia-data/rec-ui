@@ -36,6 +36,9 @@
           <d-tab title="Chartbit">
             <bo-top-items :api="'/api/dashboard/popular-chartbit/'" />
           </d-tab>
+          <d-tab title="Most Commented Items">
+            <bo-top-items :api="'/api/dashboard/comment/'" />
+          </d-tab>
           <d-tab title="Native Ads">
             <bo-top-items :api="'/api/dashboard/ads/'" />
           </d-tab>
