@@ -88,6 +88,16 @@
                       <d-button size="small" outline>Neighbors</d-button>
                     </router-link>
                   </td>
+                  <td>
+                    <router-link
+                      :to="{
+                        name: 'item_vectors',
+                        params: { item_id: item.ItemId },
+                      }"
+                    >
+                      <d-button size="small" outline>Vectors</d-button>
+                    </router-link>
+                  </td>
                 </tr>
               </tbody>
             </table>

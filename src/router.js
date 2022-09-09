@@ -9,6 +9,7 @@ import Users from './views/Users.vue';
 import Items from './views/Items.vue';
 import Recommend from './views/Recommend.vue';
 import ItemNeighbors from './views/ItemNeighbors.vue';
+import ItemVectors from './views/ItemVectors.vue';
 import UserNeighbors from './views/UserNeighbors.vue';
 import Settings from './views/Settings.vue';
 import Advance from './views/Advance.vue';
@@ -75,6 +76,11 @@ export default new Router({
       path: '/item_neighbors',
       name: 'item_neighbors',
       component: ItemNeighbors,
+    },
+    {
+      path: '/item_vectors',
+      name: 'item_vectors',
+      component: ItemVectors,
     },
     {
       path: '/user_neighbors',
