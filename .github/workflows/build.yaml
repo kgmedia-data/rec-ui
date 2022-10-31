@@ -50,7 +50,7 @@ jobs:
           git commit -m "Build embed files"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push origin statik
-          git checkout master
+          git checkout main
           cp -rf ../rec-ui/statik/statik.go statik.go
           rm go.mod go.sum
           go mod init github.com/kgmedia-data/rec-ui
@@ -58,5 +58,5 @@ jobs:
           git add statik.go go.mod go.sum
           git commit -m "Build embed files"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git push origin master
+          git push origin main
 
