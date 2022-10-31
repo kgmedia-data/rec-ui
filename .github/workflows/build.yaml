@@ -2,7 +2,7 @@ name: build
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
   workflow_dispatch:
 
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Install dependencies
         uses: borales/actions-yarn@v2.0.0
         with:
@@ -25,7 +25,7 @@ jobs:
 
       - name: Install Go
         uses: actions/setup-go@v2
-        
+
       - name: Install statik & build embed files
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
@@ -42,10 +42,20 @@ jobs:
           git checkout statik || git checkout --orphan statik
           git rm -r --cached .
           rm statik.go go.mod go.sum
-          cp -f ../dashboard/statik/statik.go statik.go
+          cp -f ../dash-ui/statik/statik.go statik.go
           go mod init github.com/kgmedia-data/rec-ui
           go mod tidy
           git add statik.go go.mod go.sum
           git commit -m "Build embed files"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push origin statik
+          git checkout master
+          cp -rf ../dash-ui/statik/statik.go statik.go
+          rm go.mod go.sum
+          go mod init github.com/kgmedia-data/rec-ui
+          go mod tidy
+          git add statik.go go.mod go.sum
+          git commit -m "Build embed files"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push origin master
+
