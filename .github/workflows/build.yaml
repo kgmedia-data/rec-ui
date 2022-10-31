@@ -40,7 +40,7 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git checkout statik || git checkout --orphan statik
-          git pull
+          git pull origin statik
           git rm -r --cached .
           rm statik.go go.mod go.sum
           cp -f ../rec-ui/statik/statik.go statik.go
