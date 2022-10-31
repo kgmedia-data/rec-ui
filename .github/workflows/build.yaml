@@ -49,7 +49,7 @@ jobs:
           git commit -m "Build embed files"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push origin statik
-          git checkout main
+          git checkout -f main
           cp -rf ../rec-ui/statik/statik.go statik.go
           rm go.mod go.sum
           go mod init github.com/ardiantovn/rec-ui
