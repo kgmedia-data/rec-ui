@@ -42,7 +42,7 @@ jobs:
           git checkout statik || git checkout --orphan statik
           git rm -r --cached .
           rm statik.go go.mod go.sum
-          cp -f ../dash-ui/statik/statik.go statik.go
+          cp -f ../rec-ui/statik/statik.go statik.go
           go mod init github.com/kgmedia-data/rec-ui
           go mod tidy
           git add statik.go go.mod go.sum
@@ -50,7 +50,7 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push origin statik
           git checkout master
-          cp -rf ../dash-ui/statik/statik.go statik.go
+          cp -rf ../rec-ui/statik/statik.go statik.go
           rm go.mod go.sum
           go mod init github.com/kgmedia-data/rec-ui
           go mod tidy
