@@ -8,6 +8,7 @@ import Cluster from './views/Cluster.vue';
 import Users from './views/Users.vue';
 import Items from './views/Items.vue';
 import Recommend from './views/Recommend.vue';
+import LastFeedback from './views/LastFeedback.vue';
 import ItemNeighbors from './views/ItemNeighbors.vue';
 import ItemVectors from './views/ItemVectors.vue';
 import UserNeighbors from './views/UserNeighbors.vue';
@@ -71,6 +72,11 @@ export default new Router({
       path: '/recommend',
       name: 'recommend',
       component: Recommend,
+    },
+    {
+      path: '/lastfeedback',
+      name: 'lastfeedback',
+      component: LastFeedback,
     },
     {
       path: '/item_neighbors',
