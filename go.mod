@@ -1,5 +1,5 @@
-module github.com/kgmedia-data/rec-ui
+module github.com/ardiantovn/rec-ui
 
-go 1.18
+go 1.17
 
-require github.com/rakyll/statik v0.1.7 // indirect
+require github.com/rakyll/statik v0.1.7
