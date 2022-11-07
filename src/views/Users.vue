@@ -82,6 +82,16 @@
                       <d-button size="small" outline>Insight</d-button>
                     </router-link>
                   </td>
+                  <td>
+                    <router-link
+                      :to="{
+                        name: 'lastfeedback',
+                        params: { user_id: user.UserId },
+                      }"
+                    >
+                      <d-button size="small" outline>Last Read</d-button>
+                    </router-link>
+                  </td>
                 </tr>
               </tbody>
             </table>
