@@ -1,4 +1,4 @@
-module github.com/ardiantovn/rec-ui
+module github.com/kgmedia-data/rec-ui
 
 go 1.17
 
